@@ -2,6 +2,9 @@
 
 A new Flutter project.
 
+<img src="https://github.com/NeiHau/coach_tutorial/assets/81244642/991942c2-eca5-4e1e-aec8-8dac83dbf2f6" width="220">
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
