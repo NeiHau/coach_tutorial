@@ -2,6 +2,8 @@
 
 A new Flutter project.
 
+<img src="[https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3655173/ea491316-2430-c0ea-8778-f84a647f5a6a.gif](https://github.com/NeiHau/coach_tutorial/assets/81244642/a192ce9a-1ff8-499b-896c-2912b374736f)" width="250">
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
