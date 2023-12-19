@@ -56,10 +56,10 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           body: _bodyWidget(),
         ),
-        if (shouldCoach)
-          SafeArea(
-            child: _buildCoachWidget(),
-          ),
+        if (shouldCoach) ModalBarrier(color: Colors.grey.withOpacity(0.3)),
+        SafeArea(
+          child: _buildCoachWidget(),
+        ),
         GestureDetector(
           onTap: () {
             if (_coachIndex < 5) {
@@ -132,20 +132,36 @@ class _MyHomePageState extends State<MyHomePage> {
           alignment: Alignment.topLeft,
           child: Container(
             padding: EdgeInsets.only(left: 3.w, top: 58.h),
-            child: Stack(
-              alignment: Alignment.center,
-              children: <Widget>[
+            child: Column(
+              children: [
+                Stack(
+                  alignment: Alignment.center,
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.all(15.w),
+                      width: 100.w,
+                      height: 100.h,
+                      decoration: BoxDecoration(
+                        color: Colors.transparent, // 内部を透明に設定
+                        border: Border.all(
+                          color: Colors.red, // 境界線の色を設定
+                          width: 5.w, // 境界線の幅を設定
+                        ),
+                        shape: BoxShape.circle,
+                      ),
+                    ),
+                  ],
+                ),
                 Container(
-                  margin: EdgeInsets.all(15.w),
+                  margin: EdgeInsets.only(left: 30.w),
                   width: 100.w,
                   height: 100.h,
-                  decoration: BoxDecoration(
-                    color: Colors.transparent, // 内部を透明に設定
-                    border: Border.all(
-                      color: Colors.red, // 境界線の色を設定
-                      width: 5.w, // 境界線の幅を設定
+                  child: Text(
+                    "これは数字の１です！\nここをタップすると次の数字の説明に以降します。",
+                    style: TextStyle(
+                      fontSize: 10.sp,
+                      color: Colors.red,
                     ),
-                    shape: BoxShape.circle,
                   ),
                 ),
               ],
@@ -157,20 +173,36 @@ class _MyHomePageState extends State<MyHomePage> {
           alignment: Alignment.topRight,
           child: Container(
             padding: EdgeInsets.only(top: 59.h),
-            child: Stack(
-              alignment: Alignment.center,
-              children: <Widget>[
+            child: Column(
+              children: [
+                Stack(
+                  alignment: Alignment.center,
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.all(15.w),
+                      width: 100.w,
+                      height: 100.h,
+                      decoration: BoxDecoration(
+                        color: Colors.transparent,
+                        border: Border.all(
+                          color: Colors.blue,
+                          width: 5.w,
+                        ),
+                        shape: BoxShape.circle,
+                      ),
+                    ),
+                  ],
+                ),
                 Container(
-                  margin: EdgeInsets.all(15.w),
+                  margin: EdgeInsets.only(right: 30.w),
                   width: 100.w,
                   height: 100.h,
-                  decoration: BoxDecoration(
-                    color: Colors.transparent,
-                    border: Border.all(
+                  child: Text(
+                    "これは数字の２です！\nここをタップすると次の数字の説明に以降します。",
+                    style: TextStyle(
+                      fontSize: 10.sp,
                       color: Colors.blue,
-                      width: 5.w,
                     ),
-                    shape: BoxShape.circle,
                   ),
                 ),
               ],
@@ -179,44 +211,76 @@ class _MyHomePageState extends State<MyHomePage> {
         );
       case 3:
         return Container(
-          padding: EdgeInsets.only(left: 5.w, top: 485.h),
+          padding: EdgeInsets.only(right: 130.w, top: 425.h),
           child: Stack(
-            alignment: Alignment.center,
+            alignment: Alignment.bottomLeft,
             children: <Widget>[
-              Container(
-                margin: EdgeInsets.all(15.w),
-                width: 100.w,
-                height: 100.h,
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  border: Border.all(
-                    color: Colors.green,
-                    width: 5.w,
+              Column(
+                children: [
+                  // テキストを先に配置し、マージンで位置を調整
+                  Container(
+                    padding: EdgeInsets.only(left: 55.w, top: 30.h),
+                    margin: EdgeInsets.only(left: 50.w), // 右斜め上に配置するためにマージンを調整
+                    child: Text(
+                      "これは数字の３です！\nここをタップすると次の数字の説明に以降します。",
+                      style: TextStyle(
+                        fontSize: 10.sp,
+                        color: Colors.green,
+                      ),
+                    ),
                   ),
-                  shape: BoxShape.circle,
-                ),
+                  // 円を配置
+                  Container(
+                    margin: EdgeInsets.only(right: 105.w),
+                    width: 100.w,
+                    height: 100.h,
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      border: Border.all(
+                        color: Colors.green,
+                        width: 5.w,
+                      ),
+                      shape: BoxShape.circle,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
         );
       case 4:
         return Container(
-          padding: EdgeInsets.only(left: 245.w, top: 488.h),
+          padding: EdgeInsets.only(left: 140.w, top: 415.h),
           child: Stack(
-            alignment: Alignment.center,
+            alignment: Alignment.bottomRight,
             children: <Widget>[
-              Container(
-                margin: EdgeInsets.all(15.w),
-                width: 100.w,
-                height: 100.h,
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  border: Border.all(
-                    color: Colors.purple,
-                    width: 5.w,
+              Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(right: 81.w, top: 30.h),
+                    margin: EdgeInsets.only(left: 50.w), // 右斜め上に配置するためにマージンを調整
+                    child: Text(
+                      "これは数字の４です！\nここをタップするとチュートリアルを終了します。",
+                      style: TextStyle(
+                        fontSize: 10.sp,
+                        color: Colors.purple,
+                      ),
+                    ),
                   ),
-                  shape: BoxShape.circle,
-                ),
+                  Container(
+                    margin: EdgeInsets.only(left: 105.w),
+                    width: 100.w,
+                    height: 100.h,
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      border: Border.all(
+                        color: Colors.purple,
+                        width: 5.w,
+                      ),
+                      shape: BoxShape.circle,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
