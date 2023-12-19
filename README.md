@@ -2,7 +2,8 @@
 
 A new Flutter project.
 
-<img src="[https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3655173/ea491316-2430-c0ea-8778-f84a647f5a6a.gif](https://github.com/NeiHau/coach_tutorial/assets/81244642/991942c2-eca5-4e1e-aec8-8dac83dbf2f6)" width="250">
+<img src="https://github.com/NeiHau/coach_tutorial/assets/81244642/991942c2-eca5-4e1e-aec8-8dac83dbf2f6" width="250">
+
 
 ## Getting Started
 
